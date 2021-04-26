@@ -472,8 +472,8 @@ const displayLib=() =>{
   song_6.appendChild(artist_6);
   song_6.appendChild(img6)
 
-  title_song_6.addEventListener('click', () =>choseSong("/MIDI/Fantaisie_Impromptu.mid"));
-  img6.addEventListener('click', () =>choseSong("/MIDI/Fantaisie_Impromptu.mid"));
+  title_song_6.addEventListener('click', () =>choseSong("tree/main/MIDI/Fantaisie_Impromptu.mid"));
+  img6.addEventListener('click', () =>choseSong("tree/main/MIDI/Fantaisie_Impromptu.mid"));
 
   //LINK TO DIVLIB
   divLib.appendChild(title_div);
