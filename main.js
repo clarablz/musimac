@@ -99,7 +99,7 @@ async function loadLocalFile(src) {
 
   LOCAL_SEQUENCE = {
     notes: [],
-    totalTime: 10,
+    totalTime: 20,
 
   }
   //Fill the notes sequence so that magenta.js and MusicRNN can read the MIDI file
