@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="style.css" type="text/css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <img src="img/gradient.png" class="gradient_img">
+  <h1 class="title">musimac box</h1>
+  <h6 class="subtitle">built with magenta.js & MusicRNN</h2>
+
+    <div class="navigation">
+      <button class="menu_button" id="home_button" type="button">home</button>
+      <button class="menu_button" id="about_button" type="button">about</button>
+    </div>
+
+
+    <div class="right_box">
+      <div class="start_buttons">
+        <button class="action" id="access_library" type="button">Try it with our library</button>
+        <button class="action" id="access_drop_file" type="button">Upload your own MIDI file</button>
+      </div>
+    </div>
+
+
+
+    <div class="lib_buttons">
+      <input class="playstop" id="play_button" type="image" src="img/play.png"></input>
+      <input class="playstop" id="stop_button" type="image" src="img/stop.png"></input>
+      <button class="continue_button" type="button">Continue with AI</button>
+    </div>
+
+
+    <div class="upload_file">
+
+      <div id="FileDrop">
+        <button class="btn-upload">Choose your file</button>
+        <input type="file" accept="audio/midi" />
+      </div>
+
+      <div class="upload_buttons">
+        <input class="playstop" id="play_button_file" type="image" src="img/play.png"></input>
+        <input class="playstop" id="stop_button_2" type="image" src="img/stop.png"></input>
+
+        <button class="upload_button" id="continue_button_file" type="button">Continue with AI</button>
+      </div>
+    </div>
+
+
+
+    <div class="about">
+
+      <h3>The concept</h3>
+      <p>Musimac box is an interactive music box that allows you to use machine learning to see how a pre-trained AI
+        would continue a song.
+        You can either test the pre-trained AI with our preloaded songs, or you can upload your own MIDI file to test
+        it.
+        Please note that not every MIDI file fits well. MusicRNN only works with monophonic music, so it will convert
+        your polyphonic song into a monophonic melody. That’s why you sometimes won’t recognize your music.
+      </p>
+
+      <h3>How does it work?</h3>
+      <p>Click on any song of the library to load it, then play “start” to listen to the original beginning of the song.
+        When finished, click “continue” and let the magic begin! You will hear how the AI would continue the song. If
+        not satisfied, you can click again on “continue” to have a different version (some will be better than others).
+      </p>
+
+      <h3>Our motivation behind this project</h3>
+      <p>Since we are both pianists, the idea to create music with a pre-trained AI got us intrigued and interested. We
+        thought that this website would be a nice feature that could really inspire musicians seeking for new musical
+        experience. </p>
+
+      <h3>Testing the limits of this AI</h3>
+      <p>While coding the website and testing the pre-trained AI offered by MusicRNN to continue a given note sequence,
+        we noticed that some results sounded weird or nothing like the original music, but others actually sounded
+        great!
+        Moreover, we uploaded different musical style to our library to test the limits of this pre-trained model.
+        Perhaps the Fantaisie-Impromptu was to much…but it allowed us to really see the limit of this model.
+        Thus, our project is limited by the pretrained AI that we can question, but it made us want to learn how this AI
+        can be trained, and why not training our own!
+      </p>
+
+      <h6 class="credits">Created by Clara BALZANO and Louise DELRIEU as part of a creative project of the Algorithmic
+        Aesthetics class of IMAC engineering school.</h6>
+      <p class="credits_magenta">
+        Built with magenta.js + MusicRNN<br>
+
+        @inproceedings{magentajs,<br>
+        title = {Magenta.js: A JavaScript API for Augmenting Creativity with Deep Learning},<br>
+        author = {Adam Roberts and Curtis Hawthorne and Ian Simon},<br>
+        year = {2018},<br>
+        booktitle = {Joint Workshop on Machine Learning for Music (ICML)}<br>
+        }
+      </p>
+    </div>
+
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@magenta/music@^1.0.0"></script>
+    <script type='text/javascript' src='https://www.midijs.net/lib/midi.js'></script>
+    <script src="https://unpkg.com/@tonejs/midi"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>

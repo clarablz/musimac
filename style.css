@@ -1,0 +1,376 @@
+body{
+      overflow:hidden
+}
+
+
+.gradient_img{
+
+    height: 99vh; 
+    z-index: -1;
+}
+
+.title{
+      font-family: 'Abril Fatface';
+      font-size: 10vh;
+      position: absolute;
+      bottom: 3vh;
+      left: 8vw;
+      cursor: pointer;
+}
+
+.subtitle{
+      font-family: 'Poppins';
+      font-size: 70%;
+      font-weight: 200;
+      position: relative;
+      left: 7.5vw;
+      bottom: 14vh;
+}
+
+.navigation{
+      position: absolute;
+      top: 5vh;
+      right: 5vw;
+}
+
+.menu_button{
+      padding:10px;
+      font-family: 'Abril Fatface';
+      font-size: 120%;
+      background-color: white;
+      border:none;
+      outline-style:none;
+}
+
+.right_box{    
+      height : 60vh;
+      width: 30vw;
+  
+      display: block;
+      
+}
+
+.start_buttons{
+      display: flex;
+      flex-direction: column;
+      align-content: center;
+      align-items: center;
+      
+      padding: 70px;
+      
+      position: absolute;
+      left:55vw;
+      top:18vh;
+}
+
+.menu_button:hover{
+      cursor: pointer;
+}
+
+
+
+.action{
+    color: white;
+    width: 300px;
+    background-color: black ;
+    border-radius : 50px;
+    padding: 5px;
+    padding-left: 7%;
+    padding-right: 7%;
+    margin-top: 30%;
+    border:none;
+    font-family:'Poppins', sans-serif;
+    font-size:110%;
+    font-weight: 800;
+    outline-style:none;
+}
+
+.action:hover{
+      cursor:pointer;
+}
+
+.lib_box{    
+      height : 40vh;
+      width: 35vw;
+      z-index: 1;
+
+      display: flex;
+      flex-direction: column;
+      align-content: center;
+      align-items: baseline;
+      
+      padding: 30px;
+
+      
+      position: absolute;
+      left:50vw;
+      top:18vh;
+      border:solid;
+
+      font-family: 'Poppins';
+
+      overflow: scroll;
+
+
+}
+
+.secondary_title{
+      font-weight: 800;
+}
+
+.song_name{
+      font-size: 80%;
+      font-weight: 600;
+      margin: 0;
+      grid-column-start: 3;
+      grid-column-end: 3;
+      grid-row-start: 1;
+      grid-row-end: 1;
+      align-self: center;
+      margin-bottom: 15px;
+      cursor: pointer;
+
+}
+
+.artist_name{
+      font-size: 75%;
+      font-weight: 200;
+      margin: 0;
+      grid-column-start: 3;
+      grid-column-end: 3;
+      grid-row-start: 1;
+      margin-top: 15px;
+      align-self: center;
+
+
+}
+
+.song_list{
+      display: grid;
+      grid-template-columns: 50px 10px auto;
+      grid-template-rows: 100%;
+      margin-bottom: 20px;
+
+}
+
+.lib_buttons{
+      display:none;
+      grid-template-columns: 70px 70px;
+      grid-template-rows: 50% 50%;
+      
+      padding: 7px;
+      width:20vw;
+
+      
+      position: absolute;
+      left: 65vw;
+      bottom:10vh;
+}
+
+.playstop{
+
+
+      height: 50px;
+      width: 50px;
+
+      cursor: pointer;
+}
+
+#play_button{
+      grid-column-start:1;
+      grid-row-start: 1;
+}
+
+#stop_button{
+      grid-column-start: 2;
+      grid-row-start: 1;
+      height:47px;
+      width: 47px;
+      justify-self: end;
+}
+
+.continue_button{
+      grid-column-start: 1;
+      grid-column-end: 3;
+      grid-row-start: 2;
+      grid-row-end: 2;
+
+      color: white;
+      background-color: black;
+      border-radius : 50px;
+
+      margin-top: 10%;
+      border:none;
+      font-family:'Poppins', sans-serif;
+      font-size:80%;
+      font-weight: 800;
+      outline-style:none;
+      cursor: pointer;
+}
+
+
+#FileDrop{
+      position: absolute;
+      top:30px;
+      left:30px;
+}
+
+
+#continue_button_file{
+      
+      grid-column-start: 1;
+      grid-column-end: 3;
+      grid-row-start: 2;
+      grid-row-end: 2;
+
+      color: white;
+      background-color: black;
+      border-radius : 50px;
+
+      margin-top: 10%;
+      border:none;
+      font-family:'Poppins', sans-serif;
+      font-size:80%;
+      font-weight: 800;
+      outline-style:none;
+      cursor: pointer;
+}
+
+.upload_button{
+      color: white;
+      background-color: black;
+      border-radius : 50px;
+      padding: 5px;
+      padding-left: 10%;
+      padding-right: 10%;
+      margin-top: 30%;
+      border:none;
+      font-family:'Poppins', sans-serif;
+      font-size:110%;
+      font-weight: 800;
+      outline-style:none;
+      cursor: pointer;
+}
+
+.upload_file{
+      display: none;
+      flex-direction: column;
+      align-items: center;
+
+
+      
+      padding: 7px;
+      width:20vw;
+      
+      position: absolute;
+      left:55vw;
+      top:18vh;
+
+      
+}
+
+#FileDrop{
+      
+      width: 20vw;
+      height: 100px;
+
+      padding: 2%;
+      font-family: 'Poppins';
+      display: flex;
+      flex-direction: column;
+      align-content: center;
+      align-items: center;
+      justify-content: space-around;
+      position: relative;
+      left: 0%;
+      overflow: hidden;
+
+
+}
+
+#FileDrop input[type=file]{
+      left: 0;
+      top: 0;
+      opacity: 0;
+      position: absolute;
+      font-size: 90px;
+}
+
+.btn-upload {
+      background-color: #fff;
+      border: 3px solid rgb(201, 199, 214);
+      color: #000;
+      padding: 10px 25px;
+
+      font-family: 'Poppins';      
+      font-size: 110%;
+      font-weight: 400;
+      cursor: pointer;
+    }
+
+.about{
+      width:38vw;
+      height: 70vh;
+      display: none;
+      flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+	align-items: flex-start;
+      position: absolute;
+      top:20vh;
+      right: 10vw;
+      overflow: auto;
+      padding-right:40px;
+}
+
+.about h3{
+      font-family: 'Poppins';
+      font-weight: 800;
+      margin-bottom:0px;
+}
+
+.about p{
+      margin-top: 0px;
+      font-family:'Poppins';
+      font-weight: 200;
+      text-align: justify;
+}
+
+
+.credits{
+      font-family:"poppins";
+      font-weight: 600;
+      margin-bottom: 0px;
+}
+
+.credits_magenta{
+      padding-top: 20px;
+      font-family: 'Courier New', Courier, monospace;
+      font-size:70%
+}
+
+.img_circles{
+      height: 50px;
+      float: left;
+      grid-column-start: 1;
+      grid-column-end: 1;
+      grid-row-start: 1;
+      grid-row-end: 1;
+      cursor: pointer;
+}
+
+.upload_buttons{
+      display:grid;
+      grid-template-columns: 70px 70px;
+      grid-template-rows: 50% 50%;
+      margin-top:10vh;
+     
+}
+
+#stop_button_2{
+      grid-column-start: 2;
+      grid-row-start: 1;
+      height:47px;
+      width: 47px;
+      justify-self: end;
+}
