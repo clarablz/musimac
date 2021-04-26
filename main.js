@@ -348,8 +348,8 @@ const displayLib=() =>{
   song_1.appendChild(artist_1);
   song_1.appendChild(img1);
 
-  title_song_1.addEventListener('click', () =>choseSong("/MIDI/Fur_Elise.mid"));
-  img1.addEventListener('click', () =>choseSong("/MIDI/Fur_Elise.mid"));
+  title_song_1.addEventListener('click', () =>choseSong("https://clarablz.github.io/musimac-box/MIDI/Fur_Elise.mid"));
+  img1.addEventListener('click', () =>choseSong("https://clarablz.github.io/musimac-box/MIDI/Fur_Elise.mid"));
   
 
   //SONG 2
