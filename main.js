@@ -374,8 +374,8 @@ const displayLib=() =>{
   song_2.appendChild(artist_2);
   song_2.appendChild(img2)
 
-  title_song_2.addEventListener('click', () =>choseSong("/MIDI/Boulevard_of_Broken_Dreams.mid"));
-  img2.addEventListener('click', () =>choseSong("/MIDI/Boulevard_of_Broken_Dreams.mid"));
+  title_song_2.addEventListener('click', () =>choseSong("https://clarablz.github.io/musimac-box/MIDI/Boulevard_of_Broken_Dreams.mid"));
+  img2.addEventListener('click', () =>choseSong("https://clarablz.github.io/musimac-box/MIDI/Boulevard_of_Broken_Dreams.mid"));
   
   //SONG 3
 
@@ -399,8 +399,8 @@ const displayLib=() =>{
   song_3.appendChild(artist_3);
   song_3.appendChild(img3)
 
-  title_song_3.addEventListener('click', () =>choseSong("/MIDI/Merry_Go_Round_of_Life.mid"));
-  img3.addEventListener('click', () =>choseSong("/MIDI/Merry_Go_Round_of_Life.mid"));
+  title_song_3.addEventListener('click', () =>choseSong("https://clarablz.github.io/musimac-box/MIDI/Merry_Go_Round_of_Life.mid"));
+  img3.addEventListener('click', () =>choseSong("https://clarablz.github.io/musimac-box/MIDI/Merry_Go_Round_of_Life.mid"));
 
   //SONG 4
   const song_4=document.createElement('div');
@@ -423,8 +423,8 @@ const displayLib=() =>{
   song_4.appendChild(artist_4);
   song_4.appendChild(img4)
 
-  title_song_4.addEventListener('click', () =>choseSong("/MIDI/Yesterday.mid"));
-  img4.addEventListener('click', () =>choseSong("/MIDI/Yesterday.mid"));
+  title_song_4.addEventListener('click', () =>choseSong("https://clarablz.github.io/musimac-box/MIDI/Yesterday.mid"));
+  img4.addEventListener('click', () =>choseSong("https://clarablz.github.io/musimac-box/MIDI/Yesterday.mid"));
 
 
   //SONG 5
@@ -448,8 +448,8 @@ const displayLib=() =>{
   song_5.appendChild(artist_5);
   song_5.appendChild(img5);
 
-  title_song_5.addEventListener('click', () =>choseSong("/MIDI/Nothing_Else_Matters.mid"));
-  img5.addEventListener('click', () =>choseSong("/MIDI/Nothing_Else_Matters.mid"));
+  title_song_5.addEventListener('click', () =>choseSong("https://clarablz.github.io/musimac-box/MIDI/Nothing_Else_Matters.mid"));
+  img5.addEventListener('click', () =>choseSong("https://clarablz.github.io/musimac-box/MIDI/Nothing_Else_Matters.mid"));
 
   //SONG6
   const song_6=document.createElement('div');
@@ -472,8 +472,8 @@ const displayLib=() =>{
   song_6.appendChild(artist_6);
   song_6.appendChild(img6)
 
-  title_song_6.addEventListener('click', () =>choseSong("/MIDI/Fantaisie_Impromptu.mid"));
-  img6.addEventListener('click', () =>choseSong("/MIDI/Fantaisie_Impromptu.mid"));
+  title_song_6.addEventListener('click', () =>choseSong("https://clarablz.github.io/musimac-box/MIDI/Fantaisie_Impromptu.mid"));
+  img6.addEventListener('click', () =>choseSong("https://clarablz.github.io/musimac-box/MIDI/Fantaisie_Impromptu.mid"));
 
   //LINK TO DIVLIB
   divLib.appendChild(title_div);
