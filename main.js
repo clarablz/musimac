@@ -9,8 +9,9 @@ rnnPlayer = new mm.SoundFontPlayer('https://storage.googleapis.com/magentadata/j
 rnn_steps = 100;
 rnn_temperature = 1;
 
-// Musical Functions
 
+
+// Musical Functions
 
 function play(music) {
   if (rnnPlayer.isPlaying()) {
@@ -114,25 +115,9 @@ async function loadLocalFile(src) {
     local_seq.notes = LOCAL_SEQUENCE.notes.filter(
         note => note.pitch >= this.minPitch && note.pitch <= this.maxPitch);
 
-  play_button.addEventListener('click', () => play(LOCAL_SEQUENCE));
+  play(LOCAL_SEQUENCE));
   continue_button.addEventListener('click', () => play_impro(local_seq));
 }
-
-
-//loadLocalFile(lib_song_src);
-
-
-
-
-
-
-/* MIDI PLAYER
-const midi_button = document.querySelector('.midi_button');
-midi_button.addEventListener('click', () => MIDIjs.play('Chopin_Waltz.mid'));
-midi_button.addEventListener('click', ()=>MIDIjs.stop());
-
-*/
-
 
 
 
