@@ -115,7 +115,7 @@ async function loadLocalFile(src) {
     local_seq.notes = LOCAL_SEQUENCE.notes.filter(
         note => note.pitch >= this.minPitch && note.pitch <= this.maxPitch);
 
-  play(LOCAL_SEQUENCE));
+  play(LOCAL_SEQUENCE);
   continue_button.addEventListener('click', () => play_impro(local_seq));
 }
 
