@@ -5,27 +5,43 @@ body{
 
 .gradient_img{
 
-    height: 99vh; 
+    position: absolute;
+    top: 0vh;
+    height: 100vh;
+    width:100vw;
+    right:50vw; 
     z-index: -1;
+
 }
+
+.gradient_img_translation_right{
+    transform: translateX(50vw);  
+    transition: 2s ease-in-out;
+}
+
+.gradient_img_translation_left{
+      transform: scaleX(1);  
+      transition: 2s ease-in-out;
+  }
 
 .title{
       font-family: 'Abril Fatface';
-      font-size: 10vh;
+      font-size: 6vw;
       position: absolute;
       bottom: 3vh;
-      left: 8vw;
+      left: 6vw;
       cursor: pointer;
       font-weight: normal;
 }
 
 .subtitle{
       font-family: 'Poppins';
-      font-size: 70%;
+      font-size: 80%;
       font-weight: 200;
       position: relative;
-      left: 7.5vw;
-      bottom: 14vh;
+      left: 5.5vw;
+      top: 85vh;
+      z-index: 1;
 }
 
 .navigation{
@@ -38,7 +54,7 @@ body{
       padding:10px;
       font-family: 'Abril Fatface';
       font-size: 120%;
-      background-color: white;
+      background-color: rgb(255,255,255,0);
       border:none;
       outline-style:none;
 }
@@ -71,15 +87,16 @@ body{
 
 
 .action{
-    color: white;
+    color: black;
     width: 300px;
-    background-color: black ;
+    background-color:rgb(255,255,255,0) ;
     border-radius : 50px;
+    border: solid 2px;
+    border-color: black;
     padding: 5px;
     padding-left: 7%;
     padding-right: 7%;
     margin-top: 30%;
-    border:none;
     font-family:'Poppins', sans-serif;
     font-size:110%;
     font-weight: 800;
@@ -88,10 +105,12 @@ body{
 
 .action:hover{
       cursor:pointer;
+      color: white;
+      background-color: black;
 }
 
 .lib_box{    
-      height : 40vh;
+      height : 35vh;
       width: 35vw;
       z-index: 1;
 
@@ -102,11 +121,11 @@ body{
       
       padding: 30px;
 
-      
+      background-color: rgb(255,255,255,0.2);
       position: absolute;
       left:50vw;
       top:18vh;
-      border:solid;
+      border:solid 1px white;
 
       font-family: 'Poppins';
 
@@ -156,57 +175,42 @@ body{
 
 .lib_buttons{
       display:none;
-      grid-template-columns: 70px 70px;
-      grid-template-rows: 50% 50%;
-      
-      padding: 7px;
-      width:20vw;
-
+      flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+      width:25vw;
       
       position: absolute;
-      left: 65vw;
-      bottom:10vh;
+      left: 58vw;
+      bottom:12vh;
 }
+
 
 .playstop{
 
 
-      height: 50px;
-      width: 50px;
+      height: 30px;
+      width: 30px;
 
       cursor: pointer;
 }
 
-#play_button{
-      grid-column-start:1;
-      grid-row-start: 1;
-}
 
-#stop_button{
-      grid-column-start: 2;
-      grid-row-start: 1;
-      height:47px;
-      width: 47px;
-      justify-self: end;
+#play_button{
+
+      align-self: center;
 }
 
 .continue_button{
-      grid-column-start: 1;
-      grid-column-end: 3;
-      grid-row-start: 2;
-      grid-row-end: 2;
+      height: 30px;
+      width: 30px;
 
-      color: white;
-      background-color: black;
-      border-radius : 50px;
-
-      margin-top: 10%;
-      border:none;
-      font-family:'Poppins', sans-serif;
-      font-size:80%;
-      font-weight: 800;
-      outline-style:none;
       cursor: pointer;
+
+      align-self: center;
+      z-index: 2;
 }
 
 
@@ -214,27 +218,17 @@ body{
       position: absolute;
       top:30px;
       left:30px;
+      margin-bottom: 10vh;
 }
 
 
 #continue_button_file{
-      
-      grid-column-start: 1;
-      grid-column-end: 3;
-      grid-row-start: 2;
-      grid-row-end: 2;
-
-      color: white;
-      background-color: black;
-      border-radius : 50px;
-
-      margin-top: 10%;
-      border:none;
-      font-family:'Poppins', sans-serif;
-      font-size:80%;
-      font-weight: 800;
-      outline-style:none;
+      height: 30px;
+      width: 30px;
       cursor: pointer;
+
+      align-self: center;
+      z-index: 2;
 }
 
 .upload_button{
@@ -264,8 +258,8 @@ body{
       width:20vw;
       
       position: absolute;
-      left:55vw;
-      top:18vh;
+      left:60vw;
+      top:22vh;
 
       
 }
@@ -299,7 +293,7 @@ body{
 
 .btn-upload {
       background-color: #fff;
-      border: 3px solid rgb(201, 199, 214);
+      border: 1px solid black;
       color: #000;
       padding: 10px 25px;
 
@@ -310,7 +304,7 @@ body{
     }
 
 .about{
-      width:38vw;
+      width:30vw;
       height: 70vh;
       display: none;
       flex-direction: column;
@@ -352,6 +346,7 @@ body{
 
 .img_circles{
       height: 50px;
+      border-radius: 50%;
       float: left;
       grid-column-start: 1;
       grid-column-end: 1;
@@ -368,10 +363,51 @@ body{
      
 }
 
-#stop_button_2{
-      grid-column-start: 2;
-      grid-row-start: 1;
-      height:47px;
-      width: 47px;
-      justify-self: end;
+
+.listening_mode{
+      font-family: 'Poppins';
+      font-weight: 800;
+      font-size: 110%;
+}
+
+.button_list{
+      display: grid;
+      grid-template-columns: 50px 5px 400px auto;
+      grid-template-rows: 100%;
+      margin-bottom: 10px;
+
+
+}
+
+.button_list p{
+      grid-column-start: 3;
+      font-family: 'Poppins';
+      font-size: 90%;
+      margin-top: 0px;
+      margin-bottom: 0px;
+      align-self: center;
+}
+
+.playing_box{
+      display: flex;
+      flex-direction: column;
+      align-content: center;
+      align-items: center;
+      position: absolute;
+      top:25vh;
+      left:15vw;
+      font-family: 'Poppins';
+      font-size: 70%;
+      font-weight: normal;
+}
+.playing_box h3{
+      font-weight: 400;
+      margin-bottom: 0px;
+      margin-top: 0px;
+}
+
+.playing_img{
+      height:200px;
+      border-radius: 50%;
+      margin-bottom: 4vh;
 }
