@@ -9,9 +9,8 @@ rnnPlayer = new mm.SoundFontPlayer('https://storage.googleapis.com/magentadata/j
 rnn_steps = 100;
 rnn_temperature = 1;
 
-
-
 // Musical Functions
+
 
 function play(music) {
   if (rnnPlayer.isPlaying()) {
@@ -27,6 +26,7 @@ function play(music) {
 }
 
 function stop(){
+
   if (rnnPlayer.isPlaying()) {
     rnnPlayer.stop();
 
@@ -115,9 +115,12 @@ async function loadLocalFile(src) {
     local_seq.notes = LOCAL_SEQUENCE.notes.filter(
         note => note.pitch >= this.minPitch && note.pitch <= this.maxPitch);
 
-  play(LOCAL_SEQUENCE);
-  continue_button.addEventListener('click', () => play_impro(local_seq));
+  
+  play(LOCAL_SEQUENCE)
+  play_button.addEventListener('click', () => play(LOCAL_SEQUENCE));
+  continue_button.addEventListener('click', () => play_impro_and_update(local_seq));
 }
+
 
 
 
@@ -173,7 +176,6 @@ async function getMidiDownload(file) {
   
     const play_button_file = document.querySelector('#play_button_file');
     play_button_file.addEventListener('click', () => play(SEQUENCE));
-
     const continue_button = document.querySelector('#continue_button_file');
     continue_button.addEventListener('click', () => play_impro(seq));
 
@@ -187,7 +189,9 @@ async function getMidiDownload(file) {
 
 const rightBox=document.querySelector('.right_box');
 const title=document.querySelector('.title');
+const gradient=document.querySelector('.gradient_img');
 const body=document.querySelector('body');
+const actionButtons=document.querySelector('.action')
 const startButtons=document.querySelector('.start_buttons');
 const libraryButton=document.querySelector('#access_library');
 const uploadButton=document.querySelector('#access_drop_file');
@@ -206,6 +210,7 @@ const divAbout=document.querySelector('.about');
 
 
 const divLib = document.createElement('div');
+const divNowPlaying = document.createElement('div');
 
 var lib_song_src;
 
@@ -242,10 +247,13 @@ const cleanDiv=(div) => {
 }
 
 const displayHome=() =>{
+  hide(divNowPlaying);
   hide(divLib);
   hide(uploadDiv);
   hide(libButtons)
   hide(divAbout);
+  gradient.classList.add("gradient_img_translation_left")
+  gradient.classList.remove("gradient_img_translation_right")
 
   displayFlex(startButtons);
   if (rnnPlayer.isPlaying()) {
@@ -258,10 +266,13 @@ const displayHome=() =>{
 }
 
 const displayAbout=() =>{
+  hide(divNowPlaying)
   hide(divLib);
   hide(uploadDiv);
   hide(libButtons);
   hide(startButtons);
+  gradient.classList.add("gradient_img_translation_left")
+  gradient.classList.remove("gradient_img_translation_right")
 
   if (rnnPlayer.isPlaying()) {
     rnnPlayer.stop();
@@ -283,28 +294,44 @@ const displayUpload=() =>{
   displayFlex(uploadDiv)
   
 
-
-
   displayBlock(playYourOwn);
   displayBlock(continueYourOwn);
-
-
 
 }
 
 
 const choseSong=(src) =>{
   loadLocalFile(src);
+
 }
+const mode=document.createElement("h3");
+const displayNowPlaying=(song,mod,src_img)=>{
+  cleanDiv(divNowPlaying)
+  displayFlex(divNowPlaying)
+
+  const img_play=document.createElement('img');
+  img_play.src=src_img
+  img_play.classList.add("playing_img");
+
+  const now_playing=document.createElement('h3');
 
 
+  now_playing.innerText = "Now playing : "+ song;
+  mode.innerText = "Mode : " + mod;
+  
+  divNowPlaying.appendChild(img_play);
+  divNowPlaying.appendChild(now_playing);
+  divNowPlaying.appendChild(mode);
+  divNowPlaying.classList.add("playing_box");
+  body.appendChild(divNowPlaying)
+}
 
 const displayLib=() =>{
   hide(startButtons);
   cleanDiv(divLib)
   displayFlex(divLib)
   divLib.scrollTo(0,0)
-  displayGrid(libButtons);
+  displayFlex(libButtons);
 
 
   const title_div=document.createElement('h2');
@@ -326,7 +353,7 @@ const displayLib=() =>{
   artist_1.innerText="Beethoven"
 
   const img1=document.createElement('img');
-  img1.src="img/cercle_1.png"
+  img1.src="img/beethoven.jpg"
   img1.classList.add("img_circles")
   
   song_1.appendChild(title_song_1);
@@ -334,6 +361,9 @@ const displayLib=() =>{
   song_1.appendChild(img1);
 
   title_song_1.addEventListener('click', () =>choseSong("https://clarablz.github.io/musimac-box/MIDI/Fur_Elise.mid"));
+  title_song_1.addEventListener('click', () =>displayNowPlaying("Für Elise", "original","img/beethoven.jpg"));
+
+  img1.addEventListener('click', () =>displayNowPlaying("Für Elise", "original","img/beethoven.jpg"));
   img1.addEventListener('click', () =>choseSong("https://clarablz.github.io/musimac-box/MIDI/Fur_Elise.mid"));
   
 
@@ -352,7 +382,7 @@ const displayLib=() =>{
   artist_2.innerText="Green Day"
 
   const img2=document.createElement('img');
-  img2.src="img/cercle_2.png"
+  img2.src="img/greenday.jpg"
   img2.classList.add("img_circles")
 
   song_2.appendChild(title_song_2);
@@ -360,6 +390,8 @@ const displayLib=() =>{
   song_2.appendChild(img2)
 
   title_song_2.addEventListener('click', () =>choseSong("https://clarablz.github.io/musimac-box/MIDI/Boulevard_of_Broken_Dreams.mid"));
+  title_song_2.addEventListener('click', () =>displayNowPlaying("Boulevard of Broken Dreams", "original","img/greenday.jpg"));
+  img2.addEventListener('click', () =>displayNowPlaying("Boulevard of Broken Dreams", "original","img/greenday.jpg"));
   img2.addEventListener('click', () =>choseSong("https://clarablz.github.io/musimac-box/MIDI/Boulevard_of_Broken_Dreams.mid"));
   
   //SONG 3
@@ -377,7 +409,7 @@ const displayLib=() =>{
   artist_3.innerText="Joe Hisaishi"
 
   const img3=document.createElement('img');
-  img3.src="img/cercle_3.png"
+  img3.src="img/merry.jpg"
   img3.classList.add("img_circles")
 
   song_3.appendChild(title_song_3);
@@ -385,6 +417,8 @@ const displayLib=() =>{
   song_3.appendChild(img3)
 
   title_song_3.addEventListener('click', () =>choseSong("https://clarablz.github.io/musimac-box/MIDI/Merry_Go_Round_of_Life.mid"));
+  title_song_3.addEventListener('click', () =>displayNowPlaying("Merry Go Round of Life", "original","img/merry.jpg"));
+  img3.addEventListener('click', () =>displayNowPlaying("Merry Go Round of Life", "original","img/merry.jpg"));
   img3.addEventListener('click', () =>choseSong("https://clarablz.github.io/musimac-box/MIDI/Merry_Go_Round_of_Life.mid"));
 
   //SONG 4
@@ -401,7 +435,7 @@ const displayLib=() =>{
   artist_4.innerText="The Beatles"
 
   const img4=document.createElement('img');
-  img4.src="img/cercle_4.png"
+  img4.src="img/beatles.jpg"
   img4.classList.add("img_circles")
 
   song_4.appendChild(title_song_4);
@@ -409,6 +443,8 @@ const displayLib=() =>{
   song_4.appendChild(img4)
 
   title_song_4.addEventListener('click', () =>choseSong("https://clarablz.github.io/musimac-box/MIDI/Yesterday.mid"));
+  title_song_4.addEventListener('click', () =>displayNowPlaying("Yesterday", "original","img/beatles.jpg"));
+  img4.addEventListener('click', () =>displayNowPlaying("Yesterday", "original","img/beatles.jpg"));
   img4.addEventListener('click', () =>choseSong("https://clarablz.github.io/musimac-box/MIDI/Yesterday.mid"));
 
 
@@ -426,7 +462,7 @@ const displayLib=() =>{
   artist_5.innerText="Metallica"
 
   const img5=document.createElement('img');
-  img5.src="img/cercle_5.png"
+  img5.src="img/metallica.png"
   img5.classList.add("img_circles")
 
   song_5.appendChild(title_song_5);
@@ -434,6 +470,8 @@ const displayLib=() =>{
   song_5.appendChild(img5);
 
   title_song_5.addEventListener('click', () =>choseSong("https://clarablz.github.io/musimac-box/MIDI/Nothing_Else_Matters.mid"));
+  title_song_5.addEventListener('click', () =>displayNowPlaying("Nothing Else Matters", "original","img/metallica.png"));
+  img5.addEventListener('click', () =>displayNowPlaying("Nothing Else Matters", "original","img/metallica.png"));
   img5.addEventListener('click', () =>choseSong("https://clarablz.github.io/musimac-box/MIDI/Nothing_Else_Matters.mid"));
 
   //SONG6
@@ -450,7 +488,7 @@ const displayLib=() =>{
   artist_6.innerText="Chopin"
 
   const img6=document.createElement('img');
-  img6.src="img/cercle_6.png"
+  img6.src="img/chopin.jpg"
   img6.classList.add("img_circles")
 
   song_6.appendChild(title_song_6);
@@ -458,6 +496,8 @@ const displayLib=() =>{
   song_6.appendChild(img6)
 
   title_song_6.addEventListener('click', () =>choseSong("https://clarablz.github.io/musimac-box/MIDI/Fantaisie_Impromptu.mid"));
+  title_song_6.addEventListener('click', () =>displayNowPlaying("Fantaisie Impromptu", "original","img/chopin.jpg"));
+  img6.addEventListener('click', () =>displayNowPlaying("Fantaisie Impromptu", "original","img/chopin.jpg"));
   img6.addEventListener('click', () =>choseSong("https://clarablz.github.io/musimac-box/MIDI/Fantaisie_Impromptu.mid"));
 
   //LINK TO DIVLIB
@@ -476,3 +516,19 @@ const displayLib=() =>{
 
 stop_button.addEventListener('click',() =>stop())
 stop_button_2.addEventListener('click',() =>stop())
+
+actionButtons.addEventListener('click',() => translate_right())
+
+
+
+const translate_right=() => {
+  gradient.classList.remove("gradient_img_translation_left");
+  gradient.classList.add('gradient_img_translation_right')
+
+}
+
+const play_impro_and_update=(music) =>{
+  play_impro(music);
+  mode.innerText="Mode : A.I";
+
+}
