@@ -3,7 +3,6 @@
 
 <head>
   <meta charset="UTF-8" />
-  <title>Musimac Box</title>
   <link rel="stylesheet" href="style.css" type="text/css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
@@ -33,9 +32,19 @@
 
 
     <div class="lib_buttons">
-      <input class="playstop" id="play_button" type="image" src="img/play.png"></input>
-      <input class="playstop" id="stop_button" type="image" src="img/stop.png"></input>
-      <button class="continue_button" type="button">Continue with AI</button>
+      <h2 class="listening_mode">Listening modes</h2>
+      <div class="button_list">
+        <input class="playstop" id="play_button" type="image" src="img/play.png"></input>
+        <p>Original</p>
+      </div>
+      <div class="button_list">
+        <input class="continue_button" type="image" src="img/play.png"></input>
+        <p>A.I version - please wait a few seconds after clicking</p>
+      </div>
+      <div class="button_list">
+        <input class="playstop" id="stop_button" type="image" src="img/stop.png"></input>
+        <p>Stop</p>
+      </div>
     </div>
 
 
@@ -45,13 +54,22 @@
         <button class="btn-upload">Choose your file</button>
         <input type="file" accept="audio/midi" />
       </div>
+      
+      <h2 class="listening_mode">Listening modes</h2>
 
-      <div class="upload_buttons">
+      <div class="button_list">
         <input class="playstop" id="play_button_file" type="image" src="img/play.png"></input>
-        <input class="playstop" id="stop_button_2" type="image" src="img/stop.png"></input>
-
-        <button class="upload_button" id="continue_button_file" type="button">Continue with AI</button>
+        <p>Original</p>
       </div>
+      <div class="button_list">
+        <input id="continue_button_file" type="image" src="img/play.png"></input>
+        <p>A.I version - please wait a few seconds after clicking</p>
+      </div>
+      <div class="button_list">
+        <input class="playstop" id="stop_button_2" type="image" src="img/stop.png"></input>
+        <p>Stop</p>
+      </div>
+    </div>
     </div>
 
 
@@ -68,8 +86,8 @@
       </p>
 
       <h3>How does it work?</h3>
-      <p>Click on any song of the library to load it, then play “start” to listen to the original beginning of the song.
-        When finished, click “continue” and let the magic begin! You will hear how the AI would continue the song. If
+      <p>Click on any song of the library to load it and you will hear the original song.
+        Then, to hear how the A.I would continue the song, click on the A.I listening mode, wait a few seconds, and let the magic begin! If
         not satisfied, you can click again on “continue” to have a different version (some will be better than others).
       </p>
 
