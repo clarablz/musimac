@@ -117,7 +117,7 @@ async function loadLocalFile(src) {
 
   
   play(LOCAL_SEQUENCE)
-  play_button.addEventListener('click', () => play(LOCAL_SEQUENCE));
+  play_button.addEventListener('click', () => play_and_update(LOCAL_SEQUENCE));
   continue_button.addEventListener('click', () => play_impro_and_update(local_seq));
 }
 
@@ -530,5 +530,11 @@ const translate_right=() => {
 const play_impro_and_update=(music) =>{
   play_impro(music);
   mode.innerText="Mode : A.I";
+
+}
+
+const play_and_update=(music) =>{
+  play(music);
+  mode.innerText="Mode : Original";
 
 }
